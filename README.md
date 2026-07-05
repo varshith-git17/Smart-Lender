@@ -315,7 +315,7 @@ python app.py
 | Platform | Profile |
 |----------|---------|
 | 🐙 GitHub | https://github.com/varshith-git17 |
-| 💼 LinkedIn | https://www.linkedin.com/in/chandra-sai-pothuri-a7a4852b6/ |
+| 💼 LinkedIn | https://www.linkedin.com/in/varshithy9652 |
 ---
 # ⭐ Acknowledgements
 
