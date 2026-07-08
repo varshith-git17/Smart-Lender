@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Eligibility Prediction System</h1>
+        <p>
+            This application predicts whether a loan will be approved based on applicant details.
+            It uses a trained machine learning model built with preprocessing, balancing, scaling,
+            and classification techniques.
+        </p>
+        <a href="/predict-page" class="btn">Predict Loan Status</a>
+    </div>
+</body>
+</html>
