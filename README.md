@@ -225,18 +225,25 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 │── Scalability & Future Plan.pdf
 │── Team Involvement in Demonstration.pdf
 
-📁 8. Project Demonstration
-│── Communication.pdf
-│── Demonstration of Proposed Features.pdf
-│── Project Demo Planning.pdf
-│── Scalability & Future Plan.pdf
-│── Team Involvement in Demonstration.pdf
-
+📁  Project Code Files
+│── .vscode/
+     ├── json
+│──  Static/
+     ├── style.css
+     └── style.css
+│──  templates/
+     ├── index.html
+     ├── landing.html
+     └── result.html
+│── app.py
+│── loan_data.csv
+│── loan_model.pkl
+│── requirements.txt
+│── scaler.pkl
+│── train.py
 ```
 
 ---
-
-
 
 # 📂 Smart-Lender Project Code File Structure
 
