@@ -184,6 +184,59 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 - Browser based(local host)
 
 ---
+## 📂 Repository Structure
+
+```text
+📁 1. Brainstorming & Ideation
+│── Brainstorming & Idea Prioritization.pdf
+│── Define Problem Statements.pdf
+│── Empathy Map.pdf
+
+📁 2. Requirement Analysis
+│── Customer Journey Map.pdf
+│── Data Flow Diagram.pdf
+│── Solution Requirements.pdf
+│── Technology Stack.pdf
+
+📁 3. Project Design Phase
+│── Problem-Solution Fit.pdf
+│── Proposed Solution.pdf
+│── Solution Architecture.pdf
+
+📁 4. Project Planning Phase
+│── Project Planning.pdf
+
+📁 5. Project Development Phase
+│── Coding & Solution.pdf
+│── Code Layout, Readability and Reusability.pdf
+│── No. of Functional Features Included in the Solution.pdf
+
+📁 6. Project Testing
+│── Performance Testing.pdf
+
+📁 7. Project Documentation
+│── Project Executable Files.pdf
+│── Sample Project Documentation.pdf
+
+📁 8. Project Demonstration
+│── Communication.pdf
+│── Demonstration of Proposed Features.pdf
+│── Project Demo Planning.pdf
+│── Scalability & Future Plan.pdf
+│── Team Involvement in Demonstration.pdf
+
+📁 8. Project Demonstration
+│── Communication.pdf
+│── Demonstration of Proposed Features.pdf
+│── Project Demo Planning.pdf
+│── Scalability & Future Plan.pdf
+│── Team Involvement in Demonstration.pdf
+
+```
+
+---
+
+
 
 # 📂 Smart-Lender Project Code File Structure
 
