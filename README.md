@@ -185,7 +185,7 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 
 ---
 
-# 📂 Project Structure
+# 📂 Smart-Lender Project Code File Structure
 
 ```
 Smart-Lender/
@@ -274,6 +274,10 @@ pip install -r requirements.txt
 
 ```bash
 python app.py
+```
+
+```bash
+ http://127.0.0.1:5000
 ```
 
 ---
