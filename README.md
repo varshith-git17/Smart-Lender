@@ -227,14 +227,14 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 
 📁  Project Code Files
 │── .vscode/
-     ├── settings
+│──  ├── settings
 │──  Static/
-     ├── script.js
-     └── style.css
+│──  ├── script.js
+│──  └── style.css
 │──  templates/
-     ├── index.html
-     ├── landing.html
-     └── result.html
+│──  ├── index.html
+│──  ├── landing.html
+│──  └── result.html
 │── app.py
 │── loan_data.csv
 │── loan_model.pkl
