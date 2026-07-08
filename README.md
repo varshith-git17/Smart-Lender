@@ -227,9 +227,9 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 
 📁  Project Code Files
 │── .vscode/
-     ├── json
+     ├── settings
 │──  Static/
-     ├── style.css
+     ├── script.js
      └── style.css
 │──  templates/
      ├── index.html
