@@ -1,17 +1,12 @@
-# ============================================================
-# Smart Lender - Loan Eligibility Prediction Web Application
-# ============================================================
-
-# =========================
-# Import Required Libraries
-# =========================
-
 import os
-from flask import Flask, render_template, request
-import pandas as pd
 import joblib
+import pandas as pd
+from flask import Flask, render_template, request
 
-# Base directory of the project
+# ============================================================
+# Flask App Configuration
+# ============================================================
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(
@@ -21,34 +16,21 @@ app = Flask(
 )
 
 # ============================================================
-# Load Trained Model and Feature Names
+# Load Model
 # ============================================================
 
-def load_model():
-    try:
-        model_path = os.path.join(BASE_DIR, "models", "loan_model.pkl")
-        trained_model = joblib.load(model_path)
-        print("Model loaded successfully.")
-        return trained_model
-    except FileNotFoundError:
-        print("Error: Model file not found.")
-        return None
+MODEL_PATH = os.path.join(BASE_DIR, "models", "loan_model.pkl")
+FEATURE_PATH = os.path.join(BASE_DIR, "models", "feature_names.pkl")
 
+loan_prediction_model = joblib.load(MODEL_PATH)
+feature_names = joblib.load(FEATURE_PATH)
 
-def load_feature_names():
-    try:
-        feature_path = os.path.join(BASE_DIR, "models", "feature_names.pkl")
-        feature_columns = joblib.load(feature_path)
-        print("Feature names loaded successfully.")
-        return feature_columns
-    except FileNotFoundError:
-        print("Error: Feature names file not found.")
-        return None
-loan_prediction_model = load_model()
-feature_names = load_feature_names()
+print("Model Loaded Successfully")
+print("Total Features:", len(feature_names))
+
 
 # ============================================================
-# Home Page
+# Routes
 # ============================================================
 
 @app.route("/")
@@ -60,99 +42,60 @@ def landing():
 def home():
     return render_template("index.html")
 
-# ============================================================
-# Prediction Route
-# ============================================================
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    """
-    Predict loan eligibility based on user input.
-    """
 
     try:
 
-        # Read form data
-        form_data = request.form
+        user_data = pd.DataFrame([{
+            "Gender": request.form["gender"],
+            "Married": request.form["married"],
+            "Dependents": request.form["dependents"],
+            "Education": request.form["education"],
+            "Self_Employed": request.form["self_employed"],
+            "ApplicantIncome": float(request.form["applicant_income"]),
+            "CoapplicantIncome": float(request.form["coapplicant_income"]),
+            "LoanAmount": float(request.form["loan_amount"]),
+            "Loan_Amount_Term": float(request.form["loan_term"]),
+            "Credit_History": float(request.form["credit_history"]),
+            "Property_Area": request.form["property_area"]
+        }])
 
-        # Create dataframe using user input
-        user_data = pd.DataFrame({
+        print("\nOriginal Input")
+        print(user_data)
 
-            "Gender": [form_data["gender"]],
-            "Married": [form_data["married"]],
-            "Dependents": [form_data["dependents"]],
-            "Education": [form_data["education"]],
-            "Self_Employed": [form_data["self_employed"]],
-
-            "ApplicantIncome": [
-                float(form_data["applicant_income"])
-            ],
-
-            "CoapplicantIncome": [
-                float(form_data["coapplicant_income"])
-            ],
-
-            "LoanAmount": [
-                float(form_data["loan_amount"])
-            ],
-
-            "Loan_Amount_Term": [
-                float(form_data["loan_term"])
-            ],
-
-            "Credit_History": [
-                float(form_data["credit_history"])
-            ],
-
-            "Property_Area": [
-                form_data["property_area"]
-            ]
-
-        })
-
-        # Convert categorical variables into dummy variables
         encoded_user_data = pd.get_dummies(user_data)
 
-        # Match the exact feature order used during training
         encoded_user_data = encoded_user_data.reindex(
             columns=feature_names,
             fill_value=0
         )
 
-        # Generate prediction
+        print("\nEncoded Input")
+        print(encoded_user_data)
+
         prediction = loan_prediction_model.predict(encoded_user_data)
 
-        # Display readable result
+        print("\nPrediction =", prediction)
+
         if prediction[0] == 1:
-           return render_template(
-        "result.html",
-        prediction="Approved"
-    )
+            result = "Approved"
         else:
-           return render_template(
-        "result.html",
-        prediction="Rejected"
-    )
-
-    except ValueError:
+            result = "Rejected"
 
         return render_template(
             "result.html",
-            prediction="Rejected"
+            prediction=result
         )
 
-    except Exception as error:
+    except Exception as e:
 
-        return render_template(
-            "result.html",
-            prediction="Rejected"
-        )
+        print("\nERROR OCCURRED")
+        print(e)
 
+        return f"<h2>Error:</h2><pre>{e}</pre>"
 
-# ============================================================
-# Run Flask Application
-# ============================================================
 
 if __name__ == "__main__":
-
     app.run(debug=True)
