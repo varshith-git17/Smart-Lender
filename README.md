@@ -368,7 +368,7 @@ python app.py
 ---
 ## 🎥 Demo Video
 
-https://drive.google.com/file/d/1gOZBAh3d_oL6hjfKEO8UvCVA8_ZvWyw5/view?usp=sharing
+https://drive.google.com/file/d/1gOZBAh3d_oL6hjfKEO8UvCVA8_ZvWyw5/view?usp=sharing 🧷
 
 ---
 
