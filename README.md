@@ -13,6 +13,12 @@ The application compares multiple classification algorithms and integrates the *
 
 ---
 
+## Live Application Link 👇 
+
+https://smart-lender-q4py.onrender.com 🔗
+
+---
+
 ## 🎯 Problem Statement
 
 Traditional loan approval processes require extensive manual verification, making them time-consuming and prone to inconsistencies.
@@ -185,13 +191,6 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 
 ---
 
----
-
-## Live Application Link 👇 
-
-https://smart-lender-q4py.onrender.com 🔗
-
----
 
 ## 📂 Repository Structure
 
