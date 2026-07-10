@@ -184,6 +184,15 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 - Browser based(local host)
 
 ---
+
+---
+
+## Live Application Link 👇 
+
+https://smart-lender-q4py.onrender.com 🔗
+
+---
+
 ## 📂 Repository Structure
 
 ```text
@@ -225,21 +234,27 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 │── Scalability & Future Plan.pdf
 │── Team Involvement in Demonstration.pdf
 
+
+📁  Project Demo Video
+│──  Demo Video link/
+│──  ├── link
+
 📁  Project Code Files
-│── .vscode/
-│──  ├── settings
-│──  Static/
+│──  data/
+│──  ├── loan_data.csv
+│──  static/
 │──  ├── script.js
 │──  └── style.css
 │──  templates/
 │──  ├── index.html
 │──  ├── landing.html
 │──  └── result.html
+│──  models/
+│──  ├── scaler.pkl
+│──  ├── loan_model.pkl
 │── app.py
 │── loan_data.csv
-│── loan_model.pkl
 │── requirements.txt
-│── scaler.pkl
 │── train.py
 ```
 
@@ -251,22 +266,26 @@ The trained **XGBoost** model was selected for deployment due to its superior pe
 Smart-Lender/
 │
 ├── data/
+|──  ├── loan_data.csv
 ├── models/
-├── static/
-│   ├── css/
-│   ├── images/
-│   └── js/
-│
-├── templates/
-│   ├── index.html
-│   ├── landing.html
-│   └── result.html
-│
+|──  ├── feature_names.pkl
+|──  ├── loan_model.pkl
+|──  └── scaler.pkl
+├──  notebooks/
+│    ├── eda.ipynb
+├──  static/
+│    ├── style.css
+│    └── script.js
+├──  templates/
+│    ├── index.html
+│    ├── landing.html
+│    └── result.html
+├── .gitignore
 ├── app.py
-├── trained_model.pkl
 ├── requirements.txt
-├── README.md
-└── .gitignore
+├── train.py
+└── README.md
+
 ```
 
 ---
@@ -366,9 +385,17 @@ python app.py
 - Docker Deployment
 
 ---
+
+## Live Application Link 👇 
+
+https://smart-lender-q4py.onrender.com 🔗
+
+---
+
+---
 ## 🎥 Demo Video
 
-https://drive.google.com/file/d/1gOZBAh3d_oL6hjfKEO8UvCVA8_ZvWyw5/view?usp=sharing 🧷
+https://drive.google.com/file/d/1gOZBAh3d_oL6hjfKEO8UvCVA8_ZvWyw5/view?usp=sharing 🔗
 
 ---
 
